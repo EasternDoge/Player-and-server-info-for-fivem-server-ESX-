@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+.player-info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 40px rgb(255, 255, 255),  0 0 80px rgb(255, 255, 255), 0 0 90px rgb(255, 255, 255), 0 0 100px rgb(255, 255, 255), 0 0 150px rgb(255, 255, 255);
+
+}
+
+.player-id,
+.session-time,
+.players-count {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.player-id span,
+.session-time span,
+.players-count span {
+    font-weight: bold;
+}

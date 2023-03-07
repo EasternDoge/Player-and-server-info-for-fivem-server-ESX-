@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./style.css">
+<body>
+    <div id="player-info" class="player-info">
+        <div class="player-id">Player ID: <span id="player-id-value"></span></div>
+        <div class="session-time">Session Time: <span id="session-time-value"></span></div>
+        <div class="players-count">Players Online: <span id="players-count-value"></span></div>
+    </div>
+    <script>
+            // Listen for the updatePlayerInfo event
+    window.addEventListener('message', function(event) {
+        if (event.data.type === 'updatePlayerInfo') {
+            // Update the values of the span elements
+            document.getElementById('player-id-value').innerText = event.data.playerId
+            document.getElementById('session-time-value').innerText = formatSessionTime(event.data.sessionTime)
+            document.getElementById('players-count-value').innerText = event.data.playersCount
+        }
+    })
+    
+    // Format the session time to display it in minutes and seconds
+    function formatSessionTime(sessionTime) {
+        var minutes = Math.floor(sessionTime / 60)
+        var seconds = Math.floor(sessionTime % 60)
+        return minutes + 'm ' + seconds + 's'
+    }
+    </script>    
+</body>
+</html>
